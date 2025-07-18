@@ -1,0 +1,220 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles, Menu, FileText, Mail, Archive, MessageSquare } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import heroBackground from "@/assets/hero-background.jpg";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-gradient-subtle">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="font-bold text-xl text-primary">Mme NDIAYE</div>
+            <div className="hidden md:flex space-x-8">
+              <a href="#accueil" className="text-foreground hover:text-primary transition-colors">Accueil</a>
+              <a href="#projets" className="text-foreground hover:text-primary transition-colors">Projets</a>
+              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            </div>
+            <Button variant="ghost" size="sm" className="md:hidden">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="accueil" className="relative pt-20 min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url(${heroBackground})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-glow/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-128 h-128 bg-accent/5 rounded-full blur-3xl animate-pulse delay-500" />
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 animate-fade-in">
+          {/* Decorative Element */}
+          <div className="flex items-center justify-center mb-8">
+            <Sparkles className="w-8 h-8 text-primary mr-2 animate-glow-pulse" />
+            <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent w-24" />
+            <Sparkles className="w-8 h-8 text-primary ml-2 animate-glow-pulse" />
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-primary bg-clip-text text-transparent leading-tight">
+            Mme NDIAYE
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            Assistante du Directeur Général des Élections, passionnée par l'organisation et la rigueur administrative.
+          </p>
+
+          {/* Call to Action */}
+          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
+            <Button 
+              variant="hero" 
+              size="lg"
+              className="group text-lg px-8 py-4 h-auto"
+              onClick={() => document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Afficher mes projets
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="text-lg px-8 py-4 h-auto border-primary/30 text-primary hover:bg-primary/5"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Me contacter
+            </Button>
+          </div>
+
+          {/* Decorative Bottom Element */}
+          <div className="mt-16 flex items-center justify-center">
+            <div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent w-32" />
+          </div>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-20 w-4 h-4 bg-primary/30 rounded-full animate-bounce delay-300" />
+        <div className="absolute top-40 right-32 w-3 h-3 bg-accent/40 rounded-full animate-bounce delay-700" />
+        <div className="absolute bottom-32 left-32 w-5 h-5 bg-primary/20 rounded-full animate-bounce delay-1000" />
+        <div className="absolute bottom-20 right-20 w-2 h-2 bg-purple-glow/50 rounded-full animate-bounce delay-500" />
+      </section>
+
+      {/* Projects Section */}
+      <section id="projets" className="py-20 px-6 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-primary bg-clip-text text-transparent">
+              Mes Projets
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Découvrez mes domaines d'expertise et les projets sur lesquels je travaille
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-primary/20">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <MessageSquare className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-primary">Gestion des réunions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Organisation et coordination des réunions officielles, préparation des ordres du jour et suivi des décisions.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-primary/20">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-primary">Suivi du courrier</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Gestion rigoureuse du courrier entrant et sortant, classement et distribution selon les priorités.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-primary/20">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Archive className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-primary">Archivage numérique</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Digitalisation et organisation des documents administratifs pour un accès rapide et sécurisé.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 border-primary/20">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-primary">Communication interne</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
+                  Facilitation des échanges entre les services et diffusion des informations importantes.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-gradient-subtle">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center mb-8">
+            <Sparkles className="w-6 h-6 text-primary mr-2" />
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-primary bg-clip-text text-transparent">
+              Me Contacter
+            </h2>
+            <Sparkles className="w-6 h-6 text-primary ml-2" />
+          </div>
+          
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            N'hésitez pas à me contacter pour toute demande d'information ou collaboration
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
+            <Button 
+              variant="hero" 
+              size="lg"
+              className="group text-lg px-8 py-4 h-auto"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Envoyer un email
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="text-lg px-8 py-4 h-auto border-primary/30 text-primary hover:bg-primary/5"
+            >
+              Télécharger mon CV
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 bg-background border-t border-border">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-muted-foreground">
+            © 2024 Mme NDIAYE - Assistante du Directeur Général des Élections
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
