@@ -12,6 +12,15 @@
     body {
       background: linear-gradient(135deg, #f5f3ff, #ede9fe);
       scroll-behavior: smooth;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* occupe toute la hauteur */
+    }
+    main {
+      flex: 1; /* pousse le footer en bas */
+    }
+    footer {
+      flex-shrink: 0;
     }
     .bg-purple-blur {
       background-color: rgba(139, 92, 246, 0.1);
@@ -31,7 +40,6 @@
         transform: translateY(0);
       }
     }
-    /* Hover effect for buttons */
     .btn-hero {
       transition: all 0.3s ease;
     }
@@ -73,167 +81,105 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="z-10 text-center px-6 py-20 max-w-4xl mx-auto fade-in">
-    <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-purple-400 to-purple-500 text-transparent bg-clip-text mb-4">
-      Phina DIOUF
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-700 mb-8 font-light">
-      Assistante du Directeur Général des Élections, passionnée par l’organisation et la rigueur administrative.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#projets" class="btn-hero bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700 transition">
-        Afficher mes projets
-      </a>
-      <a href="#contact" class="btn-hero border border-purple-300 text-purple-600 px-6 py-3 rounded-full text-lg hover:bg-purple-100 transition">
-        Me contacter
-      </a>
-    </div>
-  </section>
-
-  <!-- À propos -->
-  <section id="about" class="py-20 bg-white text-gray-800 text-center fade-in">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-4 text-purple-700">À propos de moi</h2>
-      <p class="text-lg leading-relaxed">
-        Je suis Mme NDIAYE, Assistante du Directeur Général des Élections, passionnée par l’organisation, la rigueur administrative et le soutien stratégique aux prises de décision. Je me spécialise dans la gestion efficace des tâches administratives, la communication professionnelle et l’accompagnement dans des projets à fort impact.
+  <!-- ✅ Contenu principal -->
+  <main>
+    <!-- Hero -->
+    <section class="z-10 text-center px-6 py-20 max-w-4xl mx-auto fade-in">
+      <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-purple-400 to-purple-500 text-transparent bg-clip-text mb-4">
+        Phina DIOUF
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-700 mb-8 font-light">
+        Assistante du Directeur Général des Élections, passionnée par l’organisation et la rigueur administrative.
       </p>
-    </div>
-  </section>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#projets" class="btn-hero bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700 transition">
+          Afficher mes projets
+        </a>
+        <a href="#contact" class="btn-hero border border-purple-300 text-purple-600 px-6 py-3 rounded-full text-lg hover:bg-purple-100 transition">
+          Me contacter
+        </a>
+      </div>
+    </section>
 
-  <!-- Compétences -->
-  <section id="skills" class="py-20 bg-purple-50 text-gray-800 fade-in">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-10 text-purple-700">Mes compétences</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
-          <h3 class="text-xl font-semibold mb-2">Gestion administrative</h3>
-          <p class="text-sm">Organisation, planification, gestion documentaire</p>
+    <!-- À propos -->
+    <section id="about" class="py-20 bg-white text-gray-800 text-center fade-in">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-purple-700">À propos de moi</h2>
+        <p class="text-lg leading-relaxed">
+          Je suis Mme NDIAYE, Assistante du Directeur Général des Élections, passionnée par l’organisation, la rigueur administrative et le soutien stratégique aux prises de décision.
+        </p>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills" class="py-20 bg-purple-50 text-gray-800 fade-in">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-10 text-purple-700">Mes compétences</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+            <h3 class="text-xl font-semibold mb-2">Gestion administrative</h3>
+            <p class="text-sm">Organisation, planification, gestion documentaire</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+            <h3 class="text-xl font-semibold mb-2">Communication professionnelle</h3>
+            <p class="text-sm">Courriers, compte-rendus, relations hiérarchiques</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+            <h3 class="text-xl font-semibold mb-2">Outils numériques</h3>
+            <p class="text-sm">Suite Office, messagerie, logiciels de gestion</p>
+          </div>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
-          <h3 class="text-xl font-semibold mb-2">Communication professionnelle</h3>
-          <p class="text-sm">Courriers, compte-rendus, relations hiérarchiques</p>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="z-10 mt-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 fade-in">
+      <div class="p-6 rounded-xl shadow-md bg-white border-l-4 border-purple-500 card-hover">
+        <div class="flex items-center mb-3">
+          <i data-lucide="file-text" class="w-6 h-6 text-purple-600 mr-2"></i>
+          <h2 class="text-xl font-semibold">Gestion des documents officiels</h2>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-6 card-hover">
-          <h3 class="text-xl font-semibold mb-2">Outils numériques</h3>
-          <p class="text-sm">Suite Office, messagerie, logiciels de gestion</p>
+        <p class="text-gray-600">Organisation rigoureuse des courriers, rapports et archives.</p>
+      </div>
+      <div class="p-6 rounded-xl shadow-md bg-white border-l-4 border-purple-500 card-hover">
+        <div class="flex items-center mb-3">
+          <i data-lucide="mail" class="w-6 h-6 text-purple-600 mr-2"></i>
+          <h2 class="text-xl font-semibold">Coordination des correspondances</h2>
         </div>
+        <p class="text-gray-600">Communication efficace avec les institutions partenaires.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projets -->
-  <section id="projets" class="z-10 mt-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 fade-in">
-    <div class="p-6 rounded-xl shadow-md bg-white border-l-4 border-purple-500 card-hover">
-      <div class="flex items-center mb-3">
-        <i data-lucide="file-text" class="w-6 h-6 text-purple-600 mr-2"></i>
-        <h2 class="text-xl font-semibold">Gestion des documents officiels</h2>
+    <!-- Contact -->
+    <section id="contact" class="mt-20 text-center px-6 fade-in">
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        N'hésitez pas à me contacter pour toute demande d'information ou collaboration
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 items-center justify-center">
+        <a href="mailto:email@example.com" class="btn-hero bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg flex items-center transition">
+          <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
+          Envoyer un email
+        </a>
+        <a href="cv-mme-ndiaye.pdf" download class="btn-hero border border-purple-300 text-purple-600 px-8 py-4 rounded-full text-lg hover:bg-purple-100 transition">
+          Télécharger mon CV
+        </a>
       </div>
-      <p class="text-gray-600">Organisation rigoureuse des courriers, rapports et archives.</p>
-    </div>
-    <div class="p-6 rounded-xl shadow-md bg-white border-l-4 border-purple-500 card-hover">
-      <div class="flex items-center mb-3">
-        <i data-lucide="mail" class="w-6 h-6 text-purple-600 mr-2"></i>
-        <h2 class="text-xl font-semibold">Coordination des correspondances</h2>
-      </div>
-      <p class="text-gray-600">Communication efficace avec les institutions partenaires.</p>
-    </div>
-    <div class="p-6 rounded-xl shadow-md bg-white border-l-4 border-purple-500 card-hover">
-      <div class="flex items-center mb-3">
-        <i data-lucide="archive" class="w-6 h-6 text-purple-600 mr-2"></i>
-        <h2 class="text-xl font-semibold">Suivi des archives</h2>
-      </div>
-      <p class="text-gray-600">Classement, numérisation et conservation optimale des dossiers.</p>
-    </div>
-    <div class="p-6 rounded-xl shadow-md bg-white border-l-4 border-purple-500 card-hover">
-      <div class="flex items-center mb-3">
-        <i data-lucide="message-square" class="w-6 h-6 text-purple-600 mr-2"></i>
-        <h2 class="text-xl font-semibold">Comptes rendus & réunions</h2>
-      </div>
-      <p class="text-gray-600">Rédaction professionnelle des PV et suivi des actions.</p>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact" class="mt-20 text-center px-6 fade-in">
-    <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-      N'hésitez pas à me contacter pour toute demande d'information ou collaboration
-    </p>
-    <div class="flex flex-col sm:flex-row gap-6 items-center justify-center">
-      <a href="mailto:email@example.com" class="btn-hero bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-lg flex items-center transition">
-        <i data-lucide="mail" class="w-5 h-5 mr-2"></i>
-        Envoyer un email
-      </a>
-      <a href="cv-mme-ndiaye.pdf" download class="btn-hero border border-purple-300 text-purple-600 px-8 py-4 rounded-full text-lg hover:bg-purple-100 transition">
-        Télécharger mon CV
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-20 bg-purple-100 text-center text-sm py-6 px-4">
+  <!-- ✅ Footer -->
+  <footer class="bg-purple-100 text-center text-sm py-6 px-4">
     <p class="text-purple-700">© 2025 Mme NDIAYE. Tous droits réservés.</p>
     <p class="text-purple-600 mt-1">Contact : <a href="mailto:email@example.com" class="underline">email@gomycode.com</a></p>
   </footer>
 
-<script>
-  lucide.createIcons();
-  
-  const burgerBtn = document.getElementById('burgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  
-  burgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Intersection Observer pour fade-in
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-      }
+  <script>
+    lucide.createIcons();
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // =============================
-  // Navbar highlight sur section active (desktop + mobile)
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('header nav a');
-  const mobileLinks = document.querySelectorAll('#mobileMenu a');
-
-  function setActiveLink() {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 80; // ajuster selon la hauteur navbar
-      if (scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    // Desktop
-    navLinks.forEach(link => {
-      link.classList.remove('text-purple-700', 'font-bold');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('text-purple-700', 'font-bold');
-      }
-    });
-
-    // Mobile
-    mobileLinks.forEach(link => {
-      link.classList.remove('text-purple-700', 'font-bold');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('text-purple-700', 'font-bold');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', setActiveLink);
-  window.addEventListener('load', setActiveLink);
-</script>
-
-
+  </script>
 </body>
 </html>
